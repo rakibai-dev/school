@@ -1,0 +1,184 @@
+.tide {
+  display: grid;
+  grid-template-columns: 11.5rem minmax(0, 1fr) 13.5rem;
+  align-items: center;
+  gap: clamp(1.25rem, 3vw, 2.75rem);
+  padding-block: 1.15rem 1.35rem;
+  border-block: 1px solid var(--rule);
+}
+
+.tide__meta {
+  display: grid;
+  gap: 0.15rem;
+  align-content: center;
+}
+
+.tide__title {
+  font-family: var(--face-display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+
+.tide__date {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.tide__state {
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--sun-deep);
+}
+
+.tide__plot {
+  min-width: 0;
+}
+
+.tide__svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.tide__grid {
+  stroke: var(--rule-soft);
+  stroke-width: 1;
+  stroke-dasharray: 2 6;
+}
+
+.tide__axis {
+  stroke: var(--rule);
+  stroke-width: 1;
+}
+
+.tide__curve {
+  fill: none;
+  stroke: var(--tide);
+  stroke-width: 1.7;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.tide__tick {
+  font-family: var(--face-text);
+  font-size: 11px;
+  fill: var(--ink-faint);
+  letter-spacing: 0.01em;
+}
+
+.tide__now-line {
+  stroke: var(--sun-deep);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+}
+
+.tide__now-dot {
+  fill: var(--sun);
+  stroke: var(--paper);
+  stroke-width: 1.5;
+}
+
+.tide__times {
+  display: grid;
+  gap: 0.28rem;
+  align-content: center;
+}
+
+.tide__time {
+  display: grid;
+  grid-template-columns: 2.5rem 5.4rem auto;
+  gap: 0.5rem;
+  align-items: baseline;
+  font-size: 0.85rem;
+  padding-block: 0.1rem;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.tide__time:last-child {
+  border-bottom: 0;
+}
+
+.tide__time dt {
+  color: var(--ink-faint);
+}
+
+.tide__time dd {
+  color: var(--ink);
+}
+
+.tide__height {
+  color: var(--ink-soft);
+  justify-self: end;
+}
+
+@media (max-width: 900px) {
+  .tide {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'meta times'
+      'plot plot';
+    gap: 0.75rem 1.5rem;
+    padding-block: 1rem 1.15rem;
+  }
+
+  .tide__meta {
+    grid-area: meta;
+  }
+
+  .tide__plot {
+    grid-area: plot;
+    margin-top: 0.35rem;
+  }
+
+  .tide__times {
+    grid-area: times;
+    grid-template-columns: repeat(2, auto);
+    grid-auto-flow: column;
+    gap: 0 1.25rem;
+    justify-content: end;
+  }
+
+  .tide__time {
+    grid-template-columns: 2.5rem auto;
+    border-bottom: 0;
+  }
+
+  .tide__height {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .tide {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'meta'
+      'plot'
+      'times';
+  }
+
+  .tide__times {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    justify-content: stretch;
+    margin-top: 0.5rem;
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 0.6rem;
+  }
+
+  .tide__time {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.05rem;
+    padding-top: 0;
+    white-space: nowrap;
+    font-size: 0.8rem;
+  }
+
+  .tide__time dd.num {
+    font-size: 0.86rem;
+  }
+}

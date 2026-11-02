@@ -1,0 +1,70 @@
+/* ------------------------------------------------------------------
+   Tern Point School — design tokens
+   Palette drawn from a harbor chart: fog-white paper, tidewater ink,
+   buoy marigold, and sea glass.
+-------------------------------------------------------------------*/
+
+:root {
+  /* Colour */
+  --paper: #eff1e9;
+  --paper-bright: #f8f9f3;
+  --paper-deep: #e3e8dd;
+  --ink: #10312e;
+  --ink-raised: #17403b;
+  --ink-soft: #40574f;
+  --ink-faint: #55706a;
+  --rule: #cbd4c7;
+  --rule-soft: #dbe1d6;
+  --sun: #e2a33c;
+  --sun-bright: #f2b94d;
+  --sun-deep: #87590c;
+  --tide: #17635b;
+  --tide-deep: #0f4c46;
+  --glass: #c7dad3;
+  --glass-bright: #dfeae3;
+
+  /* Type */
+  --face-display: 'Eczar', 'Iowan Old Style', Georgia, serif;
+  --face-text: 'Alegreya Sans', 'Segoe UI', system-ui, sans-serif;
+
+  --step--2: 0.6875rem;
+  --step--1: 0.8125rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.1875rem;
+  --step-2: 1.4375rem;
+  --step-3: clamp(1.75rem, 2.4vw, 2.125rem);
+  --step-4: clamp(2.125rem, 3.4vw, 3rem);
+  --step-5: clamp(2.5rem, 4.6vw, 4.125rem);
+  --step-display: clamp(3.25rem, 7.6vw, 6.75rem);
+
+  --leading-display: 0.98;
+  --leading-tight: 1.18;
+  --leading-text: 1.62;
+
+  /* Space */
+  --gutter: clamp(1.25rem, 5vw, 4.5rem);
+  --page-max: 78rem;
+  --section-y: clamp(4rem, 9vw, 8.5rem);
+  --stack: clamp(1rem, 1.6vw, 1.5rem);
+
+  /* Shape */
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 0.68, 0.32, 1);
+  --ease-soft: cubic-bezier(0.4, 0.1, 0.2, 1);
+  --dur-fast: 160ms;
+  --dur-mid: 280ms;
+  --dur-slow: 900ms;
+
+  /* Elevation — used once, for the dialog */
+  --shadow-dialog: 0 24px 80px -32px rgb(16 49 46 / 45%);
+
+  /* Chart (inverted, used in the hero panel) */
+  --chart-water: #0e3230;
+  --chart-land: #1a4741;
+  --chart-line: #cfe0d6;
+  --chart-sounding: #a9c3b8;
+}
